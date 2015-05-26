@@ -1,10 +1,13 @@
 var express = require('express');
 var path = require('path');
+var mongoose = require('mongoose'); // Mongoose: Libreria para conectar con MongoDB
+var passport = require('passport'); // Passport: Middleware de Node que facilita la autenticación de usuarios
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+require('./passport')(passport);
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
