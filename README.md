@@ -2,7 +2,12 @@
 
 Proyecto inicial para Express JS usando IntelliJ IDEA
 
-para installar:
+Para installar:
 
     $ npm install
     $ cd public && bower install
+
+
+Para correr:
+
+    $ node bin/www
