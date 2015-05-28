@@ -1,0 +1,21 @@
+//
+   Created by gerardo on 27/05/15.
+
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet', href='/stylesheets/login.css')
+    body
+        div.container(role='main')
+            form.form-signin
+                h2.form-signin-heading Please Login
+                label.sr-only(for='inputEmail')
+                input#inputMail.form-control(type='email',placeholder='Email address',required,autofocus)
+                label.sr-only(for='inputPassword')
+                input#inputPassword.form-control(type='password',placeholder='Password',required,autofocus)
+                button.btn.btn-lg.btn-primary.btn-block(type='submit') Login
+
+        script(type='text/javascript',src='bower_components/jquery/dist/jquery.min.js')
+        script(type='text/javascript',src='bower_components/bootstrap/dist/js/bootstrap.min.js')
