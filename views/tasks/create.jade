@@ -6,7 +6,7 @@ block content
             div.panel.panel-primary
                 div.panel-heading New Task
                 div.panel-body
-                    form(action='create',method='post')
+                    form(action='/tasks/create',method='post')
                         div.form-group
                             label(for='title') Title
                             input#title.form-control(name='title')
