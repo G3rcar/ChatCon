@@ -1,8 +1,8 @@
-# HelloMySite
+# ChatCon
 
 Proyecto inicial para Express JS usando IntelliJ IDEA
 
-Para installar:
+Para instalar:
 
     $ npm install
     $ cd public && bower install
@@ -10,4 +10,6 @@ Para installar:
 
 Para correr:
 
-    $ node bin/www or $ node start
+    $ node bin/www
+    o
+    $ node start
