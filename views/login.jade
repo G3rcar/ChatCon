@@ -6,6 +6,8 @@ html
     head
         title= title
         link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet', href='/bower_components/bootstrap-social/bootstrap-social.css')
+        link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.css')
         link(rel='stylesheet', href='/stylesheets/login.css')
     body
         div.container(role='main')
@@ -16,6 +18,15 @@ html
                 label.sr-only(for='inputPassword')
                 input#inputPassword.form-control(type='password',placeholder='Password',required,autofocus)
                 button.btn.btn-lg.btn-primary.btn-block(type='submit') Login
+
+                a.btn.btn-block.btn-lg.btn-social.btn-facebook
+                  i.fa.fa-facebook
+                  p Sign in with facebook
+
+
+                a.btn.btn-block.btn-lg.btn-social.btn-twitter
+                  i.fa.fa-twitter
+                  p Sign in with Twitter
 
         script(type='text/javascript',src='bower_components/jquery/dist/jquery.min.js')
         script(type='text/javascript',src='bower_components/bootstrap/dist/js/bootstrap.min.js')

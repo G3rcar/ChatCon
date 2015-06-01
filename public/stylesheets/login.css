@@ -3,6 +3,12 @@ body {
   padding-bottom: 40px;
   background-color: #eee;
 }
+p {
+  margin: 0;
+}
+button.btn.btn-lg.btn-primary.btn-block {
+  margin-top: 5px;
+}
 .form-signin {
   max-width: 330px;
   padding: 15px;
