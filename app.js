@@ -4,8 +4,11 @@ var mongoose = require('mongoose'); // Mongoose: Librería para conectar con Mon
 var passport = require('passport'); // Passport: Middleware de Node que facilita la autenticación de usuarios
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var cookieParser = require("cookie-parser");
+var methodOverride = require('method-override');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -22,15 +25,14 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
       //adding complements for express session manage
-      app.use(express.logger('dev'));
-      app.use(express.methodOverride());
+      app.use(logger());
+      app.use(methodOverride());
       app.use(cookieParser());
-      app.use(express.cookieParser()); // read cookies (needed for auth)
-      app.use(express.bodyParser()); // get information from html forms
-      app.use(express.session({ secret: 'SECRET' })); // session secret
+      app.use(cookieParser());
+      app.use(bodyParser());
+      app.use(session({ secret: 'SECRET' }));
       app.use(passport.initialize());
       app.use(passport.session()); // persistent login sessions
-      app.use(flash()); // use connect-flash for flash messages stored in session
 
 
 //app.use(logger('dev'));
