@@ -10,4 +10,4 @@ Para installar:
 
 Para correr:
 
-    $ node bin/www
+    $ node bin/www or $ node start
