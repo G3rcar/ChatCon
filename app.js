@@ -24,24 +24,22 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
-      //adding complements for express session manage
-      app.use(logger());
-      app.use(methodOverride());
-      app.use(cookieParser());
-      app.use(cookieParser());
-      app.use(bodyParser());
-      app.use(session({ secret: 'SECRET' }));
-      app.use(passport.initialize());
-      app.use(passport.session()); // persistent login sessions
-
-
-//app.use(logger('dev'));
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({extended: false}));
-//app.use(cookieParser());
+//adding complements for express session manage
+app.use(logger("combined"));
+app.use(methodOverride());
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({
+  extended:true
+}));
+app.use(session({ secret: 'SECRET',
+  saveUninitialized: true,
+  resave: true
+}));
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+//ending complements
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', routes);
 app.use('/users', users);
 app.use('/tasks',tasks);
