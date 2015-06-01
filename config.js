@@ -1,11 +1,11 @@
 var config={
 	twitter:{
-		key: 'VOVnb9idssUKi8zYyhYceE3nW',
-		secret: 'nC7vyFZB4BpC7rfHlywuCYLXfnBkdxrCTymBWPTtyi1mmk1wDG'
+		key: 'aEKp2PkJPNX1WI7Vny289ElPK',
+		secret: '2oR7PhKxQ0UcDt3lBXIBqT2qgf4e12mKzBNIVtV1bwFt3x1kML'
 	},
 	facebook:{
-		id:'1447089808919662',
-		secret:'7651f71438e1b1011d8d04a2f00c7f64'
+		id:'473419622833707',
+		secret:'3a97fe451ebe14bda5860799bd3a9b51'
 	}
 };
 
