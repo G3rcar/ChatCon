@@ -1,0 +1,21 @@
+// Created by gerardo on 31/05/15.
+
+extends ../layout
+block content
+    div.row
+        div.col-lg-6.col-lg-offset-3
+            div.btn-group(role='group')
+                a.btn.btn-success(href='/tasks/create') Add
+            br
+            table.table.table-bordered
+                thead
+                    tr
+                        td #
+                        td Title
+                        td Content
+                tbody
+                    each task in tasks
+                        tr
+                            td 1
+                            td #{task.title}
+                            td #{task.content}

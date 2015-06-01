@@ -14,12 +14,13 @@ exports.post = function(req, res) {
         content: req.body.content
     });
     newTask.save();
-    res.redirect('/tasks/create');
+    res.redirect('/tasks/');
 }
 
 exports.list = function(req, res) {
-    Task.find(function(err, threads) {
-        res.send(threads);
+    Task.find(function(err, tasks) {
+        if(err) console.log('error reading tasks');
+        res.render('tasks/list',{tasks: tasks});
     });
 }
 

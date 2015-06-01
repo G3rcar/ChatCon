@@ -7,9 +7,15 @@ var router = express.Router();
 
 var apiTask = require('../controllers/apiTasks.js');
 
-router.get('/create',function(req, res, next){
-   res.render('tasks/create');
+
+router.get('/',function(req, res, next){
+    apiTask.list(req,res);
 });
+
+router.get('/create',function(req, res, next){
+    res.render('tasks/create');
+});
+
 router.post('/create',apiTask.post);
 
 module.exports = router;
