@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+    div.row
+        div.col-lg-6.col-lg-offset-3
+            div.panel.panel-primary
+                div.panel-heading New Task
+                div.panel-body
+                    form(action='create',method='post')
+                        div.form-group
+                            label(for='title') Title
+                            input#title.form-control(name='title')
+                        div.form-group
+                            label(for='content') Content
+                            input#content.form-control(name='content')
+                        div.form-group
+                            button.btn.btn-primary(type='submit') Save
+
