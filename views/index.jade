@@ -4,3 +4,17 @@ block content
     div.jumbotron
         h1= title
         p Bienvenido a #{title} con bootstrap y bower
+        block content
+          if(user)
+            ul
+              li
+                img(src="#{user.photo}")
+              li Bienvenido #{user.name}
+              li
+                a(href='logout') Salir
+          else
+            ul
+              li
+                a(href='auth/twitter') Login con Twitter
+              li
+                a(href='auth/facebook') Login con Facebook

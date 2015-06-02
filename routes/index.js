@@ -20,7 +20,8 @@ router.get('/login', function(req, res, next) {
 });
 
 router.get('/index', function(req, res, next) {
-    res.render('index', { title: 'Express' });
+    res.render('index', { title: 'Express',
+    user: req.user});
 
 });
 

@@ -14,7 +14,10 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var tasks = require('./routes/tasks');
 
-mongoose.connect('mongodb://localhost/myDataBase');
+mongoose.connect('mongodb://localhost:27017/myDataBase', function(err, res) {
+    if(err) throw err;
+    console.log('Conectado con éxito a la BD');
+});
 
 var app = express();
 
