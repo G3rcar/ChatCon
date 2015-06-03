@@ -7,6 +7,7 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 // Fichero de configuración donde se encuentran las API keys
 // Este archivo no debe subirse a GitHub ya que contiene datos
 // que pueden comprometer la seguridad de la aplicación.
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var config = require('./config');
 
 // Exportamos como módulo las funciones de passport, de manera que
@@ -38,7 +39,6 @@ module.exports = function(passport) {
 			if(err) throw(err);
 			// Si existe en la Base de Datos, lo devuelve
 			if(!err && user!= null) return done(null, user);
-
 			// Si no existe crea un nuevo objecto usuario
 			var user = new User({
 				provider_id	: profile.id,
@@ -53,6 +53,31 @@ module.exports = function(passport) {
 			});
 		});
 	}));
+
+	// Configuración del autenticado con Google
+	passport.use(new GoogleStrategy({
+		clientID        : config.google.clientID,
+		clientSecret    : config.google.clientSecret,
+		callbackURL     : '/auth/google/callback'
+	}, function(accessToken, refreshToken, profile, done) {
+		// make the code asynchronous
+		// User.findOne won't fire until we have all our data back from Google
+		// try to find the user based on their google id
+			User.findOne({ 'provider_id' : profile.id }, function(err, user) {
+				if(err) throw(err);
+				if(!err && user!= null) return done(null, user);
+				var user = new User({
+					provider_id	: profile.id,
+					name  		: profile.displayName,
+					email 		: profile.emails[0].value // pull the first email
+					});
+				user.save(function(err) {
+					if(err) throw err;
+					done(null, user);
+				});
+			});
+	}));
+
 
 	// Configuración del autenticado con Facebook
 	passport.use(new FacebookStrategy({
@@ -75,8 +100,8 @@ module.exports = function(passport) {
 			var user = new User({
 				provider_id	: profile.id,
 		//		provider		 : profile.provider,
-				name				 : profile.displayName,
-				photo				: profile.photos[0].value
+				name		: profile.displayName,
+				photo		: profile.photos[0].value
 			});
 			user.save(function(err) {
 				if(err) throw err;
