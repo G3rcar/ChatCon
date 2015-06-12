@@ -9,28 +9,40 @@ html
         link(rel='stylesheet', href='/bower_components/bootstrap-social/bootstrap-social.css')
         link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.css')
         link(rel='stylesheet', href='/stylesheets/login.css')
+        link(rel='stylesheet', href='/stylesheets/component.css')
+
+
     body
-        div.container(role='main')
-            form.form-signin
-                h2.form-signin-heading Please Login
-                label.sr-only(for='inputEmail')
-                input#inputMail.form-control(type='email',placeholder='Email address',required,autofocus)
-                label.sr-only(for='inputPassword')
-                input#inputPassword.form-control(type='password',placeholder='Password',required,autofocus)
-                button.btn.btn-lg.btn-primary.btn-block(type='submit') Login
+        div.demo-1
 
-                a(href='auth/facebook').btn.btn-block.btn-lg.btn-social.btn-facebook
-                  i.fa.fa-facebook
-                  p Sign in with facebook
+                div#large-header.large-header
+                    canvas#demo-canvas
+                div.container.login
+                    form.form-signin
+                            h2.form-signin-heading Please Login
 
 
-                a(href='auth/twitter').btn.btn-block.btn-lg.btn-social.btn-twitter
-                  i.fa.fa-twitter
-                  p Sign in with Twitter
+                            a(href='auth/facebook').btn.btn-block.btn-lg.btn-social.btn-facebook
+                                i.fa.fa-facebook
+                                p Sign in with facebook
 
-                a(href='auth/google').btn.btn-block.btn-lg.btn-social.btn-google
-                  i.fa.fa-google-plus
-                  p Sign in with google
+
+                            a(href='auth/twitter').btn.btn-block.btn-lg.btn-social.btn-twitter
+                                i.fa.fa-twitter
+                                p Sign in with Twitter
+
+                            a(href='auth/google').btn.btn-block.btn-lg.btn-social.btn-google
+                                i.fa.fa-google-plus
+                                p Sign in with google
+
+
+
 
         script(type='text/javascript',src='bower_components/jquery/dist/jquery.min.js')
         script(type='text/javascript',src='bower_components/bootstrap/dist/js/bootstrap.min.js')
+        script(type='text/javascript',src='javascript/TweenLite.min.js')
+        script(type='text/javascript',src='javascript/EasePack.min.js')
+        script(type='text/javascript',src='javascript/rAF.js')
+        script(type='text/javascript',src='javascript/demo-1.js')
+
+
